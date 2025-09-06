@@ -27,7 +27,9 @@ jobs:
           pip install pytest bandit
 
       - name: Run unit tests
-        run: pytest tests/ --maxfail=1 --disable-warnings -v
+        run: |
+          export PYTHONPATH=$PYTHONPATH:$(pwd)
+          pytest tests/ --maxfail=1 --disable-warnings -v
 
       - name: Run security scan
         run: bandit -r app/
