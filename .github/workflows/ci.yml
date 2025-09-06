@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI pipeline
 
 on:
   push:
@@ -46,3 +46,4 @@ jobs:
           IMAGE_URI="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:${GITHUB_SHA}"
           docker build -t $IMAGE_URI .
           docker push $IMAGE_URI
+
