@@ -6,5 +6,9 @@ variable "subnet_ids" {
 }
 variable "image_uri" {}
 variable "alert_email" {}
+variable "environment" {
+  description = "Environment name (staging or prod)"
+  default     = "staging"
+}
 
 
