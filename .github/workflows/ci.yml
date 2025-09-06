@@ -27,7 +27,7 @@ jobs:
           pip install pytest bandit
 
       - name: Run unit tests
-        run: pytest app/
+        run: pytest tests/ --cov=app --maxfail=1 --disable-warnings -v
 
       - name: Run security scan
         run: bandit -r app/
