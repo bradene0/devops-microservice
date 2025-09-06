@@ -1,6 +1,6 @@
 # Production-Grade DevOps Pipeline for a Microservice on AWS
 
-[![CI/CD Pipeline](https://github.com/bradene0/devops-microservice/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/bradene0/devops-microservice/actions/workflows/ci-cd.yml)
+[![CI/CD Pipeline](https://github.com/bradene0/devops-microservice/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/bradene0/devops-microservice/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### **Project Purpose**
