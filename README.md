@@ -15,6 +15,7 @@ This project follows cloud-native best practices to create a resilient, repeatab
 
 ### Architectural Diagram
 
+```mermaid
 graph TD
     subgraph "GitHub Repository"
         A[Developer pushes code] --> B{GitHub Actions CI/CD};
@@ -36,6 +37,7 @@ graph TD
 
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style I fill:#bbf,stroke:#333,stroke-width:2px
+```
 
 ### Workflow Overview
 
