@@ -44,6 +44,14 @@ jobs:
       - name: Log in to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
+      - name: Debug ECR login
+        run: |
+    echo "AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}"
+    echo "AWS_REGION: ${{ secrets.AWS_REGION }}"
+    echo "ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}"
+    aws sts get-caller-identity
+    aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
       - name: Build and push Docker image
         run: |
           IMAGE_URI="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:${GITHUB_SHA}"
