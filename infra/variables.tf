@@ -5,4 +5,6 @@ variable "subnet_ids" {
   type = list(string)
 }
 variable "image_uri" {}
+variable "alert_email" {}
+
 
