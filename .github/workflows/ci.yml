@@ -58,7 +58,7 @@ jobs:
         run: |
           IMAGE_URI="${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:${GITHUB_SHA}"
           aws ecs update-service \
-            --cluster demo-app-cluster \
+            --cluster devops-microservice-cluster \
             --service demo-app-service \
             --force-new-deployment \
             --region ${{ secrets.AWS_REGION }}
