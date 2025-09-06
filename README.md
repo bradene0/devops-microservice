@@ -19,6 +19,6 @@ pytest
 
 ## Docker Run
 ```bash
-docker build -t my-app .
-docker run -p 5000:5000 my-app
+docker build -t devops-microservice .
+docker run -p 5000:5000 devops-microservice
 ```
