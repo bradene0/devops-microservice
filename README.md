@@ -15,29 +15,7 @@ This project follows cloud-native best practices to create a resilient, repeatab
 
 ### Architectural Diagram
 
-```mermaid
-graph TD
-    subgraph "GitHub Repository"
-        A[Developer pushes code] --> B{GitHub Actions CI/CD};
-    end
-
-    subgraph "CI/CD Pipeline"
-        B -- 1. Test & Scan --> C[Pytest & Bandit];
-        C -- 2. Build --> D[Docker Build];
-        D -- 3. Push --> E[Amazon ECR];
-    end
-
-    subgraph "AWS Cloud"
-        E -- Triggers --> F{ECS Service};
-        F -- Rolling Update --> G[ECS Fargate Task];
-        H[ALB] -- Routes traffic --> G;
-    end
-
-    I[User] --> H;
-
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style I fill:#bbf,stroke:#333,stroke-width:2px
-```
+![CI/CD Pipeline Diagram](./assets/diagram-svg.svg)
 
 ### Workflow Overview
 
